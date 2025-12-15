@@ -61,36 +61,38 @@ const testimonials = [
     text: "Jay transformed our outdated website into a conversion machine. Within 30 days, our leads increased by 340%. Absolutely phenomenal work!",
     author: "Sarah Mitchell",
     role: "CEO, TechStartup Inc.",
-    avatar: "SM"
+    avatar: "SM",
+    rating: 5
   },
   {
     text: "Working with Jay feels like having a senior developer on your team. Fast, reliable, and the code quality is exceptional.",
     author: "Marcus Chen",
     role: "CTO, Digital Agency",
-    avatar: "MC"
+    avatar: "MC",
+    rating: 5
   }
 ];
 
 const WhyMe = ({ onHover, onLeave }) => {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.08
+        staggerChildren: 0.06
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -40 },
+    hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.5,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -102,9 +104,9 @@ const WhyMe = ({ onHover, onLeave }) => {
         <div className="whyme-layout">
           <motion.div 
             className="whyme-left"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="section-eyebrow">Why Choose Me</span>
             <h2 className="section-title">
@@ -116,29 +118,48 @@ const WhyMe = ({ onHover, onLeave }) => {
               Every project gets my full attention, expertise, and commitment to excellence.
             </p>
 
-            <div className="whyme-stats-mini">
-              <div className="stat-mini">
+            <motion.div 
+              className="whyme-stats-mini"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <motion.div 
+                className="stat-mini"
+                whileHover={{ scale: 1.05, y: -3 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Award size={20} />
                 <span className="stat-mini-value">50+</span>
                 <span className="stat-mini-label">Happy Clients</span>
-              </div>
-              <div className="stat-mini">
+              </motion.div>
+              <motion.div 
+                className="stat-mini"
+                whileHover={{ scale: 1.05, y: -3 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Star size={20} />
                 <span className="stat-mini-value">5.0</span>
                 <span className="stat-mini-label">Average Rating</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             <div className="whyme-testimonials">
               {testimonials.map((testimonial, index) => (
                 <motion.div 
                   key={index}
                   className="whyme-testimonial"
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.4 + index * 0.2, duration: 0.8 }}
+                  transition={{ delay: 0.3 + index * 0.15, duration: 0.6 }}
+                  whileHover={{ y: -4 }}
                 >
                   <div className="testimonial-quote">"</div>
+                  <div className="testimonial-stars">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} size={14} fill="#f59e0b" color="#f59e0b" />
+                    ))}
+                  </div>
                   <p className="testimonial-text">{testimonial.text}</p>
                   <div className="testimonial-author">
                     <div className="author-avatar">{testimonial.avatar}</div>
@@ -166,10 +187,20 @@ const WhyMe = ({ onHover, onLeave }) => {
                 onMouseEnter={onHover}
                 onMouseLeave={onLeave}
                 style={{ '--accent-color': reason.color }}
+                whileHover={{ 
+                  x: 8, 
+                  scale: 1.01,
+                  transition: { duration: 0.3 }
+                }}
               >
-                <div className="reason-icon" style={{ background: `linear-gradient(135deg, ${reason.color} 0%, ${reason.color}80 100%)` }}>
+                <motion.div 
+                  className="reason-icon" 
+                  style={{ background: `linear-gradient(135deg, ${reason.color} 0%, ${reason.color}80 100%)` }}
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <reason.icon size={20} strokeWidth={1.5} />
-                </div>
+                </motion.div>
                 <div className="reason-content">
                   <div className="reason-header">
                     <h3>{reason.title}</h3>

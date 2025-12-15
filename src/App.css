@@ -81,15 +81,7 @@ body {
 }
 
 .grain-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  display: none;
 }
 
 .ambient-light {
@@ -98,73 +90,36 @@ body {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 
 .light {
   position: absolute;
   border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
+  filter: blur(100px);
+  opacity: 0.25;
+  will-change: transform;
 }
 
 .light-1 {
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
-  top: -300px;
-  right: -200px;
-  animation: floatLight1 25s ease-in-out infinite;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
 }
 
 .light-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, transparent 70%);
-  bottom: -200px;
-  left: -150px;
-  animation: floatLight2 30s ease-in-out infinite;
-}
-
-.light-3 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
-  top: 40%;
-  left: 30%;
-  animation: floatLight3 20s ease-in-out infinite;
-}
-
-.light-4 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
-  bottom: 20%;
-  right: 10%;
-  animation: floatLight4 22s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
 }
 
-@keyframes floatLight1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-50px, 50px) scale(1.1); }
-  50% { transform: translate(-100px, -30px) scale(0.95); }
-  75% { transform: translate(30px, -50px) scale(1.05); }
-}
-
-@keyframes floatLight2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(80px, -60px) scale(1.15); }
-  66% { transform: translate(-40px, 40px) scale(0.9); }
-}
-
-@keyframes floatLight3 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(100px, -80px) rotate(180deg); }
-}
-
-@keyframes floatLight4 {
-  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
-  50% { transform: translate(-60px, 60px); opacity: 0.5; }
+.light-3,
+.light-4 {
+  display: none;
 }
 
 section {

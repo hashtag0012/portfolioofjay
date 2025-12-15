@@ -64,25 +64,25 @@ const services = [
 
 const Services = ({ onHover, onLeave }) => {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.08
       }
     }
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    hidden: { opacity: 0, y: 40, scale: 0.98 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -93,9 +93,9 @@ const Services = ({ onHover, onLeave }) => {
       <div className="container">
         <motion.div 
           className="section-header"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="section-eyebrow">What I Offer</span>
           <h2 className="section-title">
@@ -121,26 +121,46 @@ const Services = ({ onHover, onLeave }) => {
               variants={cardVariants}
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.01,
+                transition: { duration: 0.3 }
+              }}
             >
               <div className="service-card-inner">
                 <span className="service-number">{service.number}</span>
                 {service.highlight && (
-                  <div className="service-highlight">
+                  <motion.div 
+                    className="service-highlight"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                  >
                     <Sparkles size={10} />
                     <span>{service.highlight}</span>
-                  </div>
+                  </motion.div>
                 )}
                 <div className="service-header">
-                  <div className="service-icon-wrapper">
+                  <motion.div 
+                    className="service-icon-wrapper"
+                    whileHover={{ rotate: 5, scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <service.icon size={24} strokeWidth={1.5} />
-                  </div>
+                  </motion.div>
                   <ArrowUpRight className="service-arrow" size={20} />
                 </div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
                 <div className="service-tags">
                   {service.tags.map((tag, i) => (
-                    <span key={i} className="service-tag">{tag}</span>
+                    <motion.span 
+                      key={i} 
+                      className="service-tag"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {tag}
+                    </motion.span>
                   ))}
                 </div>
               </div>
@@ -152,15 +172,22 @@ const Services = ({ onHover, onLeave }) => {
 
         <motion.div 
           className="services-cta"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
         >
           <p>Need something custom? Let's discuss your unique requirements.</p>
-          <a href="#contact" className="outline-btn" onMouseEnter={onHover} onMouseLeave={onLeave}>
+          <motion.a 
+            href="#contact" 
+            className="outline-btn" 
+            onMouseEnter={onHover} 
+            onMouseLeave={onLeave}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <span>Get Custom Quote</span>
             <ArrowUpRight size={16} />
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>

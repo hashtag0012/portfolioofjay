@@ -1397,17 +1397,15 @@
 }
 
 .testimonial-quote {
-  font-family: 'Instrument Serif', serif;
-  font-size: 5rem;
-  line-height: 1;
-  background: var(--gradient-main);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: absolute;
-  top: 15px;
-  left: 25px;
-  opacity: 0.2;
+  color: var(--accent-primary);
+  opacity: 0.3;
+  margin-bottom: 8px;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
 }
 
 .testimonial-text {
@@ -1864,6 +1862,19 @@
 .footer-copyright {
   color: var(--text-muted);
   font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heart-icon {
+  color: #ec4899;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
 }
 
 @media (max-width: 768px) {

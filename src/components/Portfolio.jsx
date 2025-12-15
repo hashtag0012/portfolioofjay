@@ -47,25 +47,25 @@ const projects = [
 
 const Portfolio = ({ onHover, onLeave }) => {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
   const [hoveredId, setHoveredId] = useState(null);
 
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.12
       }
     }
   };
 
   const projectVariants = {
-    hidden: { opacity: 0, y: 80 },
+    hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.9,
+        duration: 0.7,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -76,9 +76,9 @@ const Portfolio = ({ onHover, onLeave }) => {
       <div className="container">
         <motion.div 
           className="section-header"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="section-eyebrow">Featured Projects</span>
           <h2 className="section-title">
@@ -104,19 +104,20 @@ const Portfolio = ({ onHover, onLeave }) => {
               variants={projectVariants}
               onMouseEnter={() => { setHoveredId(project.id); onHover(); }}
               onMouseLeave={() => { setHoveredId(null); onLeave(); }}
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
             >
               <div className="portfolio-image-container">
                 <motion.div 
                   className="portfolio-image"
                   style={{ backgroundImage: `url(${project.image})` }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 />
                 <div className="portfolio-image-overlay">
                   <motion.div 
                     className="view-project-btn"
                     initial={{ opacity: 0, scale: 0.8 }}
-                    whileHover={{ scale: 1.1 }}
                     animate={hoveredId === project.id ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -125,23 +126,39 @@ const Portfolio = ({ onHover, onLeave }) => {
                 </div>
                 <div className="portfolio-year">{project.year}</div>
                 {project.featured && (
-                  <div className="portfolio-featured-badge">
+                  <motion.div 
+                    className="portfolio-featured-badge"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
                     <Sparkles size={12} />
                     <span>Featured</span>
-                  </div>
+                  </motion.div>
                 )}
               </div>
 
               <div className="portfolio-content">
                 <div className="portfolio-meta">
                   <span className="portfolio-category">{project.category}</span>
-                  <ArrowUpRight className="portfolio-arrow" size={18} />
+                  <motion.div
+                    animate={{ x: hoveredId === project.id ? 4 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ArrowUpRight className="portfolio-arrow" size={18} />
+                  </motion.div>
                 </div>
                 <h3 className="portfolio-title">{project.title}</h3>
                 <p className="portfolio-description">{project.description}</p>
                 <div className="portfolio-tags">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="portfolio-tag">{tag}</span>
+                    <motion.span 
+                      key={i} 
+                      className="portfolio-tag"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {tag}
+                    </motion.span>
                   ))}
                 </div>
               </div>
@@ -151,25 +168,31 @@ const Portfolio = ({ onHover, onLeave }) => {
 
         <motion.div 
           className="portfolio-cta"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="cta-content">
-            <div className="cta-icon">
+            <motion.div 
+              className="cta-icon"
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
               <Sparkles size={24} />
-            </div>
+            </motion.div>
             <h3>Ready to create something extraordinary?</h3>
             <p>Let's turn your ideas into a digital masterpiece that drives real results.</p>
-            <a 
+            <motion.a 
               href="#contact" 
               className="magnetic-btn"
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               <span className="btn-text">Start Your Project</span>
               <ArrowUpRight size={18} className="btn-icon" />
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>

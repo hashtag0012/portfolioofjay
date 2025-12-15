@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Mail, MessageCircle, ArrowUpRight, Sparkles, Send, Clock, CheckCircle } from 'lucide-react';
+import { Mail, MessageCircle, ArrowUpRight, Sparkles, Send, Clock, CheckCircle, Heart } from 'lucide-react';
 
 const Contact = ({ onHover, onLeave }) => {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px" });
 
   const benefits = [
     { icon: Clock, text: "Response within 2 hours" },
@@ -17,16 +17,17 @@ const Contact = ({ onHover, onLeave }) => {
       <div className="container">
         <motion.div 
           className="contact-wrapper"
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="contact-header">
             <motion.div 
               className="contact-badge"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
             >
               <span className="badge-glow"></span>
               <Sparkles size={14} />
@@ -49,9 +50,10 @@ const Contact = ({ onHover, onLeave }) => {
                 <motion.div 
                   key={index}
                   className="contact-benefit"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -15 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                  transition={{ delay: 0.3 + index * 0.08, duration: 0.4 }}
+                  whileHover={{ x: 5 }}
                 >
                   <benefit.icon size={16} />
                   <span>{benefit.text}</span>
@@ -66,8 +68,10 @@ const Contact = ({ onHover, onLeave }) => {
               className="contact-card whatsapp"
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              whileHover={{ y: -6, scale: 1.02 }}
             >
               <div className="contact-card-icon">
                 <MessageCircle size={28} />
@@ -86,8 +90,10 @@ const Contact = ({ onHover, onLeave }) => {
               className="contact-card email"
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              whileHover={{ y: -6, scale: 1.02 }}
             >
               <div className="contact-card-icon">
                 <Mail size={28} />
@@ -102,39 +108,49 @@ const Contact = ({ onHover, onLeave }) => {
             </motion.a>
           </div>
 
-          <div className="contact-availability">
+          <motion.div 
+            className="contact-availability"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
             <div className="availability-indicator">
               <span className="indicator-dot"></span>
               <span className="indicator-ring"></span>
             </div>
             <span>Currently accepting new projects for Q1 2025</span>
-          </div>
+          </motion.div>
 
-          <div className="contact-decoration">
+          <motion.div 
+            className="contact-decoration"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.7, duration: 0.8 }}
+          >
             <svg className="deco-svg" viewBox="0 0 200 200" fill="none">
               <motion.circle 
                 cx="100" cy="100" r="80" 
                 stroke="url(#contactGrad)" 
                 strokeWidth="0.5"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
-                transition={{ duration: 2, delay: 0.5 }}
+                initial={{ pathLength: 0 }}
+                animate={isInView ? { pathLength: 1 } : {}}
+                transition={{ duration: 1.5, delay: 0.5 }}
               />
               <motion.circle 
                 cx="100" cy="100" r="60" 
                 stroke="url(#contactGrad)" 
                 strokeWidth="0.5"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
-                transition={{ duration: 2, delay: 0.7 }}
+                initial={{ pathLength: 0 }}
+                animate={isInView ? { pathLength: 1 } : {}}
+                transition={{ duration: 1.5, delay: 0.7 }}
               />
               <motion.circle 
                 cx="100" cy="100" r="40" 
                 stroke="url(#contactGrad)" 
                 strokeWidth="0.5"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
-                transition={{ duration: 2, delay: 0.9 }}
+                initial={{ pathLength: 0 }}
+                animate={isInView ? { pathLength: 1 } : {}}
+                transition={{ duration: 1.5, delay: 0.9 }}
               />
               <defs>
                 <linearGradient id="contactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -144,23 +160,28 @@ const Contact = ({ onHover, onLeave }) => {
                 </linearGradient>
               </defs>
             </svg>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.footer 
           className="footer"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
           <div className="footer-content">
             <div className="footer-brand">
-              <span className="footer-logo">Jay</span>
+              <motion.span 
+                className="footer-logo"
+                whileHover={{ scale: 1.05 }}
+              >
+                Jay
+              </motion.span>
               <span className="footer-divider"></span>
               <span className="footer-tagline">Turning Ideas Into Digital Reality</span>
             </div>
             <p className="footer-copyright">
-              © 2024 Jay. Crafted with passion and precision.
+              © 2024 Jay. Crafted with <Heart size={12} className="heart-icon" /> and precision.
             </p>
           </div>
         </motion.footer>
