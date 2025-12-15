@@ -1,0 +1,59 @@
+Fix and refine the existing portfolio design with production-level standards.
+
+CRITICAL FIXES (NON-NEGOTIABLE):
+
+1. NAME TYPOGRAPHY
+- The name “JAY” must always stay on a single line.
+- Do NOT break letters across lines.
+- Lock the word as one typographic unit.
+- Maintain consistent kerning and spacing across all screen sizes.
+
+2. PARALLAX & ANIMATIONS
+- Remove heavy parallax effects.
+- No animation should start mid-scroll or before the hero fully enters view.
+- Animations must trigger only when elements enter the viewport.
+- Prefer subtle fade, translate, or scale animations.
+- Prioritize performance over visual gimmicks.
+- Ensure zero scroll lag on low-end mobile devices.
+
+3. HERO SECTION REFINEMENT
+- Improve visual hierarchy: headline > subheadline > CTA.
+- Make the hero more visually balanced and premium.
+- Reduce noise, increase clarity.
+- The hero must feel confident, not over-designed.
+
+4. IMAGE & AVATAR FIXES (VERY IMPORTANT)
+- Owner’s image must be properly centered and proportioned on mobile.
+- No stretching, overflow, or awkward cropping.
+- Maintain aspect ratio.
+- Mobile view must look clean and intentional, not distorted or amateurish.
+
+5. MOBILE-FIRST RESPONSIVENESS
+- Redesign layouts starting from mobile, then scale up.
+- Ensure clean spacing, readable typography, and correct alignment on:
+  - Small phones
+  - Large phones
+  - Tablets
+  - Laptops
+  - Large desktops
+
+6. BEAUTIFY ALL SECTIONS
+- Improve visual consistency across the entire website.
+- Services, work, about, and contact sections must feel part of one system.
+- Use consistent spacing, card styles, colors, and motion.
+- Remove any sections that feel empty, cluttered, or weak.
+
+7. DESIGN QUALITY BAR
+- No “template” or “demo” look.
+- The site should feel like a high-end tech professional portfolio.
+- Clean, modern, polished, and trustworthy.
+- Visual appeal should support credibility, not distract from it.
+
+8. PERFORMANCE & OPTIMIZATION
+- Optimize images for fast loading.
+- Minimize animation overhead.
+- Ensure smooth scrolling on all devices.
+- Lighthouse-friendly performance mindset.
+
+FINAL GOAL:
+A visually striking but performance-optimized, mobile-perfect, professional tech portfolio that looks intentional, credible, and premium on every device.
