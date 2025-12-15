@@ -220,7 +220,7 @@ const Hero = ({ onHover, onLeave }) => {
             />
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
