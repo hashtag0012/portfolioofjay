@@ -1093,6 +1093,25 @@
   transition: all 0.5s var(--ease-out-expo);
 }
 
+.portfolio-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.portfolio-item-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-item-link:visited {
+  color: inherit;
+}
+
+.portfolio-item-link:focus {
+  outline: none;
+}
+
 .portfolio-item:hover {
   border-color: rgba(255, 255, 255, 0.12);
   transform: translateY(-8px);
@@ -1135,18 +1154,6 @@
 
 .portfolio-item:hover .portfolio-image-overlay {
   opacity: 1;
-}
-
-.view-project-btn {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--gradient-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
 }
 
 .portfolio-year {
@@ -1235,6 +1242,75 @@
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+.case-study-preview {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-study-content {
+  margin-bottom: 16px;
+}
+
+.case-study-section {
+  margin-bottom: 16px;
+}
+
+.case-study-section h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.case-study-section p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tool-tag {
+  padding: 4px 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+}
+
+.view-live-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--gradient-main);
+  border: none;
+  border-radius: var(--radius-full);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+.view-live-project-btn:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
 }
 
 .portfolio-cta {

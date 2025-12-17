@@ -8,56 +8,92 @@ import {
   Wrench, 
   Headphones,
   ArrowUpRight,
-  Sparkles
+  Sparkles,
+  Brush,
+  Megaphone,
+  Video,
+  PenTool
 } from 'lucide-react';
 
 const services = [
   {
     icon: Globe,
-    title: "Website Development",
-    description: "Custom-built websites that captivate visitors and convert them into customers. From sleek landing pages to complex business platforms.",
-    tags: ["Business Sites", "Landing Pages", "Responsive Design"],
+    title: "Full Stack Development",
+    description: "Building scalable and high-performance web applications using Next.js, React, Node.js, and TypeScript, with robust backend architectures, secure RESTful APIs, and clean code practices.",
+    tags: [],
     number: "01",
     highlight: "Most Popular"
   },
   {
     icon: ShoppingCart,
     title: "E-Commerce Solutions",
-    description: "Launch your online store with confidence. WooCommerce & Shopify expertise to get your products selling worldwide.",
-    tags: ["WordPress", "WooCommerce", "Shopify"],
+    description: "Developing end-to-end e-commerce platforms with secure payment gateways (Stripe, PayPal), inventory management, and seamless shopping experiences.",
+    tags: [],
     number: "02",
     highlight: null
   },
   {
     icon: Palette,
-    title: "React Development",
-    description: "Modern, blazing-fast React applications with buttery-smooth animations and interactive user experiences.",
-    tags: ["React", "Next.js", "Animations"],
+    title: "UI/UX Design & Frontend",
+    description: "Designing modern, responsive interfaces with Figma, Tailwind CSS, and Framer Motion. Creating intuitive experiences with clean design systems and pixel-perfect implementations.",
+    tags: [],
     number: "03",
     highlight: "Premium"
   },
   {
+    icon: Brush,
+    title: "Graphics Designing",
+    description: "Creating compelling visual designs using Adobe Creative Suite (Photoshop, Illustrator, InDesign) and modern design tools for branding, marketing materials, and digital assets.",
+    tags: [],
+    number: "04",
+    highlight: "Creative"
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description: "Implementing comprehensive digital marketing strategies with SEO optimization, social media management, content marketing, Google Ads, and analytics-driven campaigns.",
+    tags: [],
+    number: "05",
+    highlight: "Growth"
+  },
+  {
+    icon: Video,
+    title: "Video Editing",
+    description: "Professional video editing services using Adobe Premiere Pro, After Effects, and DaVinci Resolve for promotional content, social media videos, and corporate presentations.",
+    tags: [],
+    number: "06",
+    highlight: "Multimedia"
+  },
+  {
+    icon: PenTool,
+    title: "Logo Designing",
+    description: "Crafting unique brand identities and logo designs using vector graphics, typography principles, and brand strategy to create memorable visual representations.",
+    tags: [],
+    number: "07",
+    highlight: "Branding"
+  },
+  {
     icon: Plug,
     title: "API & Integrations",
-    description: "Seamless connections to payment gateways, CRMs, and third-party services. Making your systems work together effortlessly.",
-    tags: ["Stripe", "PayPal", "REST APIs"],
-    number: "04",
+    description: "Implementing robust API solutions and third-party integrations (Stripe, Twilio, various CRMs) to connect your systems and automate workflows.",
+    tags: [],
+    number: "08",
     highlight: null
   },
   {
     icon: Wrench,
-    title: "Bug Fixes & Speed",
-    description: "Got a broken website? Slow loading times? I'll diagnose, fix, and optimize your site for peak performance.",
-    tags: ["Bug Fixes", "Performance", "SEO"],
-    number: "05",
+    title: "Bug Fixes & Performance",
+    description: "Identifying and resolving critical bugs, optimizing database queries, and improving website load times for enhanced user experience and SEO.",
+    tags: [],
+    number: "09",
     highlight: "Quick Fix"
   },
   {
     icon: Headphones,
-    title: "Ongoing Partnership",
-    description: "Long-term support, regular updates, and white-label development for agencies. Your reliable tech partner.",
-    tags: ["Maintenance", "Updates", "White-label"],
-    number: "06",
+    title: "Maintenance & Support",
+    description: "Providing ongoing technical support, regular updates, security patches, and performance monitoring to ensure your applications run smoothly.",
+    tags: [],
+    number: "10",
     highlight: null
   }
 ];
