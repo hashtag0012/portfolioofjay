@@ -64,7 +64,7 @@ const Contact = ({ onHover, onLeave }) => {
 
           <div className="contact-methods">
             <motion.a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/918085264369" 
               className="contact-card whatsapp"
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
@@ -86,7 +86,7 @@ const Contact = ({ onHover, onLeave }) => {
             </motion.a>
 
             <motion.a 
-              href="mailto:jay@example.com" 
+              href="mailto:jaynayakjk@gmail.com" 
               className="contact-card email"
               onMouseEnter={onHover}
               onMouseLeave={onLeave}
@@ -100,7 +100,7 @@ const Contact = ({ onHover, onLeave }) => {
               </div>
               <div className="contact-card-content">
                 <span className="contact-card-label">Email</span>
-                <span className="contact-card-value">jay@example.com</span>
+                <span className="contact-card-value">jaynayakjk@gmail.com</span>
                 <span className="contact-card-subtext">For detailed discussions</span>
               </div>
               <ArrowUpRight className="contact-card-arrow" size={20} />
