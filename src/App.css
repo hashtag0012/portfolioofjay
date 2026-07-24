@@ -125,7 +125,12 @@ body {
 section {
   position: relative;
   z-index: 1;
-  padding: 140px 48px;
+  padding: 100px 48px 120px 48px;
+}
+
+section.hero {
+  padding-top: 100px;
+  padding-bottom: 40px;
 }
 
 .container {

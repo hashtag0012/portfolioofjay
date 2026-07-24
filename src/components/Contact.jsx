@@ -118,7 +118,7 @@ const Contact = ({ onHover, onLeave }) => {
               <span className="indicator-dot"></span>
               <span className="indicator-ring"></span>
             </div>
-            <span>Currently accepting new projects for Q1 2025</span>
+            <span>Currently accepting new client projects & engineering contracts</span>
           </motion.div>
 
           <motion.div 
@@ -175,13 +175,13 @@ const Contact = ({ onHover, onLeave }) => {
                 className="footer-logo"
                 whileHover={{ scale: 1.05 }}
               >
-                Jay
+                Jay Nayak
               </motion.span>
               <span className="footer-divider"></span>
-              <span className="footer-tagline">Turning Ideas Into Digital Reality</span>
+              <span className="footer-tagline">Turning Ambitious Ideas Into High-Impact Digital Realities</span>
             </div>
             <p className="footer-copyright">
-              © 2024 Jay. Crafted with <Heart size={12} className="heart-icon" /> and precision.
+              © 2026 Jay Nayak. Crafted with <Heart size={12} className="heart-icon" /> and engineering precision.
             </p>
           </div>
         </motion.footer>

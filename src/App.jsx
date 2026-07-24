@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import WhyMe from './components/WhyMe';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
@@ -62,6 +63,7 @@ function App() {
               <Services onHover={cursorEnter} onLeave={cursorLeave} />
               <Portfolio onHover={cursorEnter} onLeave={cursorLeave} />
               <WhyMe onHover={cursorEnter} onLeave={cursorLeave} />
+              <FAQ onHover={cursorEnter} onLeave={cursorLeave} />
               <Contact onHover={cursorEnter} onLeave={cursorLeave} />
             </main>
           </motion.div>
@@ -72,3 +74,4 @@ function App() {
 }
 
 export default App;
+
