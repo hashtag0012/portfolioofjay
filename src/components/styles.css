@@ -589,29 +589,23 @@
     font-size: 11px;
   }
   
-  .hero-stats {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
   .hero-cta {
     flex-direction: column;
     width: 100%;
+    justify-content: center;
   }
   
   .magnetic-btn, .outline-btn {
     width: 100%;
   }
-}
-  
-  .hero-cta {
-    justify-content: center;
-  }
   
   .hero-stats {
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
   }
-  
+}
+
   .hero-description {
     margin: 0 auto 40px;
     max-width: 480px;
