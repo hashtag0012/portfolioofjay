@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Sparkles, Code2, Rocket, Star, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, Code2, Rocket, Star } from 'lucide-react';
 
 const Hero = ({ onHover, onLeave }) => {
   const containerRef = useRef(null);
