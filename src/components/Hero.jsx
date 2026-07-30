@@ -80,7 +80,7 @@ const Hero = ({ onHover, onLeave }) => {
                 className="hero-tagline"
                 variants={itemVariants}
               >
-                Building <span className="highlight">high-converting</span> web apps & digital products that <span className="highlight">scale businesses</span>.
+                Full Stack Developer & <span className="highlight">UI/UX Designer</span> crafting high-converting <span className="highlight">websites & apps</span> that grow businesses.
               </motion.h2>
             </div>
 
@@ -88,7 +88,7 @@ const Hero = ({ onHover, onLeave }) => {
               className="hero-description"
               variants={itemVariants}
             >
-              Senior Full-Stack Developer & UI/UX Specialist with 5+ years of experience crafting custom React & Next.js platforms, seamless e-commerce portals, and enterprise web applications engineered for speed and revenue growth.
+              Jay Nayak is a Full Stack Developer, UI/UX Designer &amp; Website Designer with 5+ years of experience. From custom React &amp; Next.js web apps to e-commerce platforms, graphic design, and digital marketing — one expert for everything digital.
             </motion.p>
 
             <motion.div 

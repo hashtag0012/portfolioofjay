@@ -139,8 +139,7 @@ const Services = ({ onHover, onLeave }) => {
             your <span className="serif">business</span>
           </h2>
           <p className="section-subtitle">
-            From concept to launch, I deliver end-to-end web solutions 
-            tailored to your unique goals and audience.
+            From concept to launch, I deliver premium results as a Full Stack Developer, UI/UX Designer, and Website Designer. Explore custom solutions designed to rank and grow your business.
           </p>
         </motion.div>
 
