@@ -590,8 +590,6 @@
     align-items: stretch;
     justify-content: center;
   }
-}
-
   .hero-description {
     margin: 0 auto 40px;
     max-width: 480px;
