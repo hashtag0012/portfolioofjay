@@ -295,6 +295,13 @@
 
 .hero-inner {
   width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-content {
+  text-align: left;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .hero-layout {
@@ -688,7 +695,8 @@
   }
   
   .hero-name {
-    font-size: clamp(3.5rem, 12vw, 5rem);
+    font-size: clamp(2.2rem, 9vw, 3.8rem);
+    line-height: 1.1;
   }
   
   .hero-badge {
@@ -763,7 +771,8 @@
   }
   
   .hero-name {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    line-height: 1.1;
   }
   
   .hero-tagline {
@@ -844,16 +853,19 @@
 
 .hero-name {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(4rem, 15vw, 12rem);
+  font-size: clamp(2.5rem, 8vw, 12rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .name-text {
   display: inline-block;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: normal;
   background: var(--gradient-main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
