@@ -610,11 +610,11 @@
 
 .single-line-name {
   display: inline-block;
-  white-space: normal; /* Allow wrapping on small screens to prevent overflow */
-  word-break: keep-all;
+  white-space: normal;
+  word-break: normal;
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
   letter-spacing: -0.02em;
   background: var(--gradient-main);
   -webkit-background-clip: text;
@@ -625,8 +625,11 @@
 
 @media (max-width: 768px) {
   .single-line-name {
-    font-size: clamp(2.2rem, 8vw, 3.8rem);
+    font-size: clamp(2rem, 8.5vw, 3.2rem);
     white-space: normal;
+    word-break: normal;
+    display: block;
+    width: 100%;
   }
   .hero-layout {
     padding: 100px 20px 60px;
