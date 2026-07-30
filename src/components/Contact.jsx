@@ -175,13 +175,13 @@ const Contact = ({ onHover, onLeave }) => {
                 className="footer-logo"
                 whileHover={{ scale: 1.05 }}
               >
-                Jay Nayak
+                Jay Rathore
               </motion.span>
               <span className="footer-divider"></span>
               <span className="footer-tagline">Turning Ambitious Ideas Into High-Impact Digital Realities</span>
             </div>
             <p className="footer-copyright">
-              © 2026 Jay Nayak. Crafted with <Heart size={12} className="heart-icon" /> and engineering precision.
+              © 2026 Jay Rathore. Crafted with <Heart size={12} className="heart-icon" /> and engineering precision.
             </p>
           </div>
         </motion.footer>

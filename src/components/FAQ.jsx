@@ -196,7 +196,7 @@ const FAQ = ({ onHover, onLeave }) => {
                   onMouseLeave={onLeave}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chat with Jay Nayak on WhatsApp"
+                  aria-label="Chat with Jay Rathore on WhatsApp"
                 >
                   <span className="btn-text">Chat on WhatsApp</span>
                 </a>
@@ -205,7 +205,7 @@ const FAQ = ({ onHover, onLeave }) => {
                   className="outline-btn"
                   onMouseEnter={onHover}
                   onMouseLeave={onLeave}
-                  aria-label="Email Jay Nayak"
+                  aria-label="Email Jay Rathore"
                 >
                   <span>Send an Email</span>
                 </a>

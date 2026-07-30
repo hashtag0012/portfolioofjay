@@ -72,7 +72,7 @@ const Hero = ({ onHover, onLeave }) => {
                 variants={itemVariants}
               >
                 <span className="name-text single-line-name">
-                  JAY NAYAK
+                  JAY RATHORE
                 </span>
               </motion.h1>
 
@@ -88,7 +88,7 @@ const Hero = ({ onHover, onLeave }) => {
               className="hero-description"
               variants={itemVariants}
             >
-              Jay Nayak is a Full Stack Developer, UI/UX Designer &amp; Website Designer with 5+ years of experience. From custom React &amp; Next.js web apps to e-commerce platforms, graphic design, and digital marketing — one expert for everything digital.
+              Jay Rathore is a Full Stack Developer, UI/UX Designer &amp; Website Designer with 5+ years of experience. From custom React &amp; Next.js web apps to e-commerce platforms, graphic design, and digital marketing — one expert for everything digital.
             </motion.p>
 
             <motion.div 
@@ -175,7 +175,7 @@ const Hero = ({ onHover, onLeave }) => {
               <div className="hero-image-frame">
                 <img 
                   src="/jay-photo.png" 
-                  alt="Jay Nayak - Full-Stack Developer & UI/UX Specialist" 
+                  alt="Jay Rathore - Full-Stack Developer & UI/UX Specialist" 
                   className="hero-image"
                   loading="eager"
                 />
