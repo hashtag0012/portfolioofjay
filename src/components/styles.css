@@ -622,9 +622,18 @@
   .hero-cta {
     margin-bottom: 48px;
   }
+}
 
+.single-line-name {
+  display: block;
+  font-size: clamp(2rem, 9.5vw, 6.5rem);
+  white-space: nowrap;
+}
 
 @media (max-width: 768px) {
+  .single-line-name {
+    font-size: clamp(2rem, 9vw, 4.5rem);
+  }
   .hero-layout {
     padding: 100px 20px 60px;
     gap: 32px;
